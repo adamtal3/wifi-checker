@@ -9,7 +9,11 @@ import configureStore from './store/configureStore';
 import './app.global.css';
 
 const store = configureStore();
-const history = syncHistoryWithStore(hashHistory, store);
+const history = syncHistoryWithStore(hashHistory, store, {
+  selectLocationState (state) {
+      return state.get('routing');
+  }
+});
 
 render(
   <Provider store={store}>

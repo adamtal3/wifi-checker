@@ -1,11 +1,11 @@
 // @flow
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import { routerReducer as routing } from 'react-router-redux';
-import counter from './counter';
+import home from './home';
 
 const rootReducer = combineReducers({
-  counter,
-  routing
+  routing,
+  home
 });
 
 export default rootReducer;
